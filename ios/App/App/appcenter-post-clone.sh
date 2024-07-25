@@ -10,4 +10,5 @@ sudo gem install cocoapods -v $COCOAPODS_VER
 
 console.log('instalar los siguiente')
 sudo arch -x86_64 gem install ffi
+arch -x86_64 pod install
 sudo -x86_64 pod install
