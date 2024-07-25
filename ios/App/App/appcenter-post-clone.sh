@@ -7,3 +7,6 @@ COCOAPODS_VER=`sed -n -e 's/^COCOAPODS: \([0-9.]*\)/\1/p' Podfile.lock`
 
 echo "Installing CocoaPods version $COCOAPODS_VER"
 sudo gem install cocoapods -v $COCOAPODS_VER
+
+sudo arch -x86_64 gem install ffi
+arch -x86_64 pod install
