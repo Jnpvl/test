@@ -12,7 +12,6 @@
     "lint": "ng lint",
     "build:android": "ionic build && npx cap add android && npx cap sync android && node updateAndroidManifest.js && node updateGradleVersion &&node updateBuildGradle.js && npx cap open android",
     "generate:android": "ionic build && npx cap sync android && node updateAndroidManifest.js && node updateGradleVersion &&node updateBuildGradle.js && npx cap open android"
-
   },
   "private": true,
   "dependencies": {
