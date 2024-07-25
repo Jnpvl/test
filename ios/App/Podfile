@@ -20,9 +20,6 @@ def capacitor_pods
 end
 
 target 'App' do
-  sudo gem install cocoapods
-  pod init
-  pod install
   capacitor_pods
   # Add your Pods here
 end
