@@ -21,7 +21,8 @@ end
 
 target 'App' do
   capacitor_pods
-  pod instal
+  sudo arch -x86_64 gem install ffi
+  arch -x86_64 pod install
   # Add your Pods here
 end
 
