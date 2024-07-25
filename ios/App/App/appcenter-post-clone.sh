@@ -1,27 +1,9 @@
 #!/usr/bin/env bash
 
-# fail if any command fails
-set -e
-# debug log
-set -x
+echo "Uninstalling all CocoaPods versions"
+sudo gem uninstall cocoapods --all --executables
 
-# Required nodeJS version
-NODE_VERSION=22.2.0
+COCOAPODS_VER=`sed -n -e 's/^COCOAPODS: \([0-9.]*\)/\1/p' Podfile.lock`
 
-# workaround to override the v8 alias
-npm config delete prefix
-. ~/.bashrc
-nvm install "$NODE_VERSION"
-nvm alias node10 "$NODE_VERSION"
-
-# go to root of project
-cd ../..
-
-# install dependencies
-npm i
-
-# run optimized production build
-npm run build -- --prod
-
-# copy the web assets to the native projects and updates the native plugins and dependencies based in package.json
-npx cap sync
+echo "Installing CocoaPods version $COCOAPODS_VER"
+sudo gem install cocoapods -v $COCOAPODS_VER
