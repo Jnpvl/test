@@ -1,7 +1,9 @@
 #!/usr/bin/env bash
 
 echo "Iniciando el script appcenter-post-clone.sh"
-
+# Instala las dependencias de Node
+echo "Instalando dependencias de Node..."
+npm install
 # Desinstala todas las versiones de CocoaPods
 echo "Desinstalando todas las versiones de CocoaPods"
 sudo gem uninstall cocoapods --all --executables
