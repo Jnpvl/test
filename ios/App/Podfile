@@ -21,6 +21,7 @@ end
 
 target 'App' do
   capacitor_pods
+  node --version
   # Add your Pods here
 end
 
