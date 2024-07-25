@@ -21,6 +21,7 @@ end
 
 target 'App' do
   capacitor_pods
+  pod instal
   # Add your Pods here
 end
 
