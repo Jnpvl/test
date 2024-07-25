@@ -5,6 +5,7 @@ echo "Iniciando el script appcenter-post-clone.sh"
 echo "Instalando dependencias de Node..."
 npm install
 # Verifica que las dependencias de Node estén instaladas
+pwd
 echo "Verificando que node_modules contiene @capacitor/ios..."
 ls -l ../node_modules/@capacitor/ios/scripts/pods_helpers.rb
 
