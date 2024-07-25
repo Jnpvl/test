@@ -1,0 +1,53 @@
+<ion-content>
+  <ion-header class="ion-no-border">
+    <ion-toolbar>
+      <ion-title class="main-header"
+        ><img src="assets/images/logo_white.webp" alt="logo" class="login-logo"
+      /></ion-title>
+    </ion-toolbar>
+  </ion-header>
+  <div class="login-content">
+    <div class="login-image">
+      <img
+        src="assets/images/perfil-bco.png"
+        alt="login-img"
+        class="login-img"
+      />
+      <h2>INICIAR SESIÓN</h2>
+    </div>
+    <form [formGroup]="loginForm" class="login-form" (ngSubmit)="loginSubmit()">
+      <div class="login-email form-group">
+        <label for="email">Email</label>
+        <input
+          type="email"
+          id="email"
+          formControlName="email"
+          placeholder="johndoe@gmail.com"
+        />
+      </div>
+      <div class="login-password form-group">
+        <label for="password">Password</label>
+        <input
+          type="password"
+          id="password"
+          formControlName="password"
+          placeholder="**********"
+        />
+        <a [routerLink]="['../password-recovery']">¿Olvidaste tu contraseña?</a>
+      </div>
+      <button expand="block" class="login-button">INGRESAR</button>
+      <div class="login-register">
+        <p>¿No tienes cuenta?</p>
+        <a [routerLink]="['../register']">Regístrate</a>
+      </div>
+    </form>
+  </div>
+</ion-content>
+
+<ion-alert
+  [isOpen]="isAlertOpen"
+  [header]="[alertOptions.header]"
+  [message]="[alertOptions.message]"
+  [buttons]="alertOptions.buttons"
+  (didDismiss)="setOpen(false)"
+></ion-alert>

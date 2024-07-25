@@ -1,0 +1,42 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <a [routerLink]="['../']" class="back-button"
+        ><ion-icon slot="start" name="arrow-back"></ion-icon
+      ></a>
+    </ion-buttons>
+    <ion-title class="secondary-header">Método de Pago</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-grid>
+    <ion-row>
+      <ion-col>
+        <div class="ion-text-center">
+          <h6>Total a Pagar:</h6>
+          <h3>$ {{ totalSaldo | number:'1.2-2' }} {{ tipoDeCambio }} {{ 
+            selectedCurrencyType === "Pesos Mexicanos" ? 'MXN' : 
+            selectedCurrencyType === "Dolares Estadounidenses" ? 'USD' : 'MXN' }}
+          </h3>
+        </div>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+  <app-card [cards]="cards"></app-card>
+
+  <app-card-list
+    [cards]="cards"
+    [selectable]="true"
+    (cardSelected)="onCardSelected($event)"
+  ></app-card-list>
+
+  <ion-grid>
+    <ion-row class="ion-align-items-center">
+      <ion-col class="ion-text-center">
+        <ion-button expand="round" (click)="processCheckout()">CONTINUAR</ion-button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

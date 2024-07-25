@@ -1,0 +1,27 @@
+
+.toolbar {
+    display: flex;
+    justify-content: center; 
+    align-items: center; 
+    text-align: center; 
+    --min-height: 56px; 
+    --padding-start: 0; 
+    --padding-end: 0; 
+    padding-right: 10%;
+  }
+  
+  .image {
+    display: flex;
+    justify-content: center; 
+    align-items: center; 
+  }
+  
+  .logo-image {
+    height: 50px; 
+    width: auto;
+  }
+  
+  ion-icon {
+    font-size: 24px;
+    color: white; 
+  }

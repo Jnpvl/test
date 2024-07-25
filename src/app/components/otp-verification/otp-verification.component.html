@@ -1,0 +1,73 @@
+<ion-conten>
+  <ion-header class="ion-no-border">
+    <ion-toolbar>
+      <ion-title class="main-header">
+        <img src="assets/images/logo_white.webp" alt="logo" class="login-logo"/>
+      </ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <div class="verification-introduce">
+    <img src="assets/images/perfil-bco.png" alt="login-img" class="code-img"/>
+    <h1 >Confirmación</h1>
+  </div>
+
+  <div class="OTP">
+    <h2>INGRESAR CÓDIGO</h2>
+    <div class="otp-container">
+      <ion-grid>
+        <ion-row>
+          <ion-col class="otp-col">
+            <input
+              type="number"
+              id="number-1"
+              [maxLength]="1"
+              (keyup)="nextInput($event)"
+              (change)="fillCode($event)"
+            />
+          </ion-col>
+          <ion-col class="otp-col">
+            <input
+              type="number"
+              id="number-2"
+              [maxLength]="1"
+              (keyup)="nextInput($event)"
+              (change)="fillCode($event)"
+            />
+          </ion-col>
+          <ion-col class="otp-col">
+            <input
+              type="number"
+              id="number-3"
+              [maxLength]="1"
+              (keyup)="nextInput($event)"
+              (change)="fillCode($event)"
+            />
+          </ion-col>
+          <ion-col class="otp-col">
+            <input
+              type="number"
+              id="number-4"
+              [maxLength]="1"
+              (keyup)="nextInput($event)"
+              (change)="fillCode($event)"
+            />
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </div>
+    <div class="button-border">
+      <button class="code-btn" (click)="confirmCodeEntered()">
+        <ion-icon name="arrow-forward-outline"></ion-icon>
+      </button>
+    </div>
+  </div>
+</ion-conten>
+
+<ion-alert
+  [isOpen]="isAlertOpen"
+  [header]="alertOptions.header"
+  [message]="alertOptions.message"
+  [buttons]="alertOptions.buttons"
+  (didDismiss)="setOpen(false)"
+></ion-alert>

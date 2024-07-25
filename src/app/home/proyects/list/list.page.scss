@@ -1,0 +1,67 @@
+.no-projects {
+    justify-content: center;
+    display: flex;
+    margin-top: 10px;
+}
+
+ion-grid {
+    color: var(--text-color);
+    background-color: #EDF2F3;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+
+    ion-row {
+        ion-col {
+            font-size: .8rem;
+            text-align: center;
+            padding-left: 0 !important;
+            padding-right: 0 !important;
+
+            .sm-icon {
+                width: .9rem;
+                display: inline-block;
+                vertical-align: top;
+            }
+        }
+    }
+}
+
+ion-list {
+    ion-item {
+        ion-label {
+            font-size: .9rem;
+            color: var(--text-color);
+        }
+
+        .ion-text-right {
+            font-size: .8rem;
+            color: var(--clima3-primary);
+            
+            ion-icon {
+                color: var(--clima3-primary);
+                font-size: 1.3rem;
+                vertical-align: middle;
+            }
+        }
+
+        .sm-icon {
+            width: .9rem;
+            display: inline-block;
+            vertical-align: bottom;
+            margin-left: 1rem;
+            margin-right: 1rem;
+        }
+    }
+}
+
+.text-uppercase {
+    text-transform: uppercase !important;
+}
+
+.title-container{
+    font-weight: 500;
+    margin: 5px;
+    width: 50%;
+    height: 60px;
+    color: var(--clima3-primary);;
+}

@@ -1,0 +1,17 @@
+.custom-header {
+  --ion-safe-area-top: env(safe-area-inset-top);
+  --ion-safe-area-bottom: env(safe-area-inset-bottom);
+
+  background: #3880ff;
+  color: #fff;
+}
+
+.custom-header .custom-toolbar {
+  padding-top: var(--ion-safe-area-top);
+  padding-bottom: var(--ion-safe-area-bottom);
+}
+
+.title {
+  font-size: 20px;
+  font-weight: bold;
+}

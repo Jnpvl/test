@@ -1,0 +1,29 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <a [routerLink]="['../']" class="back-button"
+        ><ion-icon slot="start" name="arrow-back"></ion-icon
+      ></a>
+    </ion-buttons>
+    <ion-title class="secondary-header">Tienda en linea</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-grid>
+    <ion-row>
+      <ion-col size="12" class="ion-text-center">
+        <ion-img src="assets/images/Pop-up.png"></ion-img>
+      </ion-col>
+      <ion-col size="12" class="ion-text-center">
+        <p>{{ timeLeft }} segundos para redirigir:</p>
+        <ion-button expand="block" (click)="abrirTienda()">
+          DA CLICK AQUÍ
+        </ion-button>
+        <ion-button expand="block" (click)="cerrarTienda()">
+          CERRAR
+        </ion-button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

@@ -1,0 +1,100 @@
+.signature-page {
+  --ion-background-color: var(--clima3-bg);
+}
+
+canvas {
+  border: 4px solid hsl(0, 0%, 85%);
+  border-radius: 10px;
+  width: 95%;
+}
+
+.signature {
+  padding: 2rem 0;
+  background-color: #fff;
+}
+
+.text {
+  text-align: justify;
+  color: #9b9b9b;
+  margin: 0 1rem;
+  font-size: 12px;
+}
+
+.title {
+  --color: var(--clima3-primary);
+  text-transform: lowercase;
+}
+.user {
+  font-weight: 500;
+  color: var(--clima3-primary);
+}
+.title::first-letter {
+  text-transform: uppercase;
+}
+
+.activity-img {
+  background-color: var(--clima3-primary);
+  border-radius: 10px;
+  aspect-ratio: 1/1;
+  max-width: 150px;
+  margin: 0 auto 1rem;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 36px;
+  color: #fff;
+}
+
+.activity-img img {
+  border-radius: 10px;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  box-sizing: border-box;
+  border: 5px solid var(--clima3-primary);
+}
+
+.signature-container > h5 {
+  text-transform: uppercase;
+  color: #d9d9d9;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 12px;
+}
+.signature-container > button {
+  text-transform: uppercase;
+  color: #d9d9d9;
+  position: absolute;
+  font-size: 26px;
+  top: 0.7rem;
+  right: 1rem;
+  background-color: transparent;
+}
+
+.signature-container {
+  position: relative;
+  text-align: center;
+  width: fit-content;
+  margin: 0 auto;
+}
+
+.send-signature {
+  background-color: var(--clima3-primary);
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 0.6rem 1.3rem;
+  font-size: 0.9rem;
+  margin-top: 2rem;
+  cursor: pointer;
+  outline: none;
+  text-transform: uppercase;
+}
+
+.signature {
+  text-align: center;
+  margin: 0 2rem;
+}

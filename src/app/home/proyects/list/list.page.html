@@ -1,0 +1,59 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <a [routerLink]="['../../']" class="back-button"
+        ><ion-icon slot="start" name="arrow-back"></ion-icon
+      ></a>
+    </ion-buttons>
+    <ion-title class="secondary-header">Proyectos</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-grid>
+    <ion-row>
+      <ion-col class="ion-text-center">
+        <ion-img src="assets/images/status_Detenido.png" class="sm-icon"></ion-img><br>
+        Detenido
+      </ion-col>
+      <ion-col class="ion-text-center">
+        <ion-img src="assets/images/status_Progreso.png" class="sm-icon"></ion-img><br>
+        Progreso
+      </ion-col>
+      <ion-col class="ion-text-center">
+        <ion-img src="assets/images/status_Completado.png" class="sm-icon"></ion-img><br>
+        Completado
+      </ion-col>
+      <ion-col class="ion-text-center">
+        <ion-img src="assets/images/status_Cancelado.png" class="sm-icon"></ion-img><br>
+        Cancelado
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+  <div class="loader" *ngIf="loading">
+    <ion-spinner name="dots"></ion-spinner>
+  </div>
+
+  <ion-list *ngIf="proyects.length > 0 && !loading">
+    <ion-item *ngFor="let proyect of proyects" (click)="selectProject(proyect)">
+     <ion-img *ngIf="proyect.estatus == '0'" src="assets/images/status_Detenido.png" class="sm-icon"></ion-img>
+      <ion-img *ngIf="proyect.estatus == '1'" src="assets/images/status_Progreso.png" class="sm-icon"></ion-img>
+      <ion-img *ngIf="proyect.estatus == '2'" src="assets/images/status_Completado.png" class="sm-icon"></ion-img>
+      <ion-img *ngIf="proyect.estatus == '3'" src="assets/images/status_Cancelado.png" class="sm-icon"></ion-img>
+      <div class="title-container">
+        <ion-label>{{ proyect.titleNumber }}</ion-label>
+        <ion-label>{{ proyect.titleText }}</ion-label>
+      </div>
+      <ion-label class="ion-text-right text-uppercase">
+        {{ proyect.FechaInicio | date:'dd/MMM/yyyy' }}
+        <ion-icon name="chevron-forward"></ion-icon>
+      </ion-label>
+    </ion-item>
+  </ion-list>
+  <div *ngIf="proyects.length === 0 && !loading" class="no-projects">
+    <ion-label>No hay proyectos disponibles</ion-label>
+  </div>
+</ion-content>
+
+

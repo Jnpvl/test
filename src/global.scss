@@ -1,0 +1,186 @@
+/*
+ * App Global CSS
+ * ----------------------------------------------------------------------------
+ * Put style rules here that you want to apply globally. These styles are for
+ * the entire app and not just one component. Additionally, this file can be
+ * used as an entry point to import other CSS/Sass files to be included in the
+ * output CSS.
+ * For more information on global stylesheets, visit the documentation:
+ * https://ionicframework.com/docs/layout/global-stylesheets
+ */
+
+/* Core CSS required for Ionic components to work properly */
+@import "@ionic/angular/css/core.css";
+
+/* Basic CSS for apps built with Ionic */
+@import "@ionic/angular/css/normalize.css";
+@import "@ionic/angular/css/structure.css";
+@import "@ionic/angular/css/typography.css";
+@import "@ionic/angular/css/display.css";
+
+/* Optional CSS utils that can be commented out */
+@import "@ionic/angular/css/padding.css";
+@import "@ionic/angular/css/float-elements.css";
+@import "@ionic/angular/css/text-alignment.css";
+@import "@ionic/angular/css/text-transformation.css";
+@import "@ionic/angular/css/flex-utils.css";
+
+/**
+ * Ionic Dark Mode
+ * -----------------------------------------------------
+ * For more info, please see:
+ * https://ionicframework.com/docs/theming/dark-mode
+ */
+
+/* @import "@ionic/angular/css/palettes/dark.always.css"; */
+/* @import "@ionic/angular/css/palettes/dark.class.css"; */
+/* @import "@ionic/angular/css/palettes/dark.system.css"; */
+
+ion-content {
+  --background: var(--ion-background-color) !important;
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+  color: var(--ion-color-dark);
+  background-color: var(--ion-color-light);
+}
+ion-header {
+  background-color: var(--clima3-primary);
+  height: fit-content !important;
+  --box-shadow: none;
+  --color: white;
+}
+
+ion-toolbar {
+  --background: var(--clima3-primary);
+  --color: white;
+  --min-height: 70px;
+  --padding-top: 10px;
+  --padding-bottom: 10px;
+  box-sizing: border-box !important;
+  text-transform: uppercase;
+}
+
+.ios ion-title {
+  text-align: center;
+}
+
+.md .secondary-header {
+  text-align: center;
+  transform: translateX(-2rem);
+}
+
+.md .main-header {
+  text-align: center !important;
+}
+
+.form-group {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.back-button {
+  padding: 1rem;
+  color: #fff;
+}
+
+.form-group > input {
+  background-color: transparent;
+  border: 1px solid var(--clima3-primary);
+  border-radius: 5px;
+  font-size: 1rem;
+  outline: none;
+  padding: 0.2rem 0.5rem;
+}
+.form-group > textarea {
+  background-color: transparent;
+  border: 1px solid var(--clima3-primary);
+  border-radius: 5px;
+  font-size: 1rem;
+  outline: none;
+  padding: 0.2rem 0.5rem;
+}
+
+.form-group > label {
+  font-size: 0.8rem;
+  margin-bottom: 0.4rem;
+  color: var(--clima3-primary);
+  text-transform: uppercase;
+}
+
+.form-group > a {
+  font-size: 0.8rem;
+  color: var(--clima3-primary);
+  text-align: right;
+  text-decoration: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+.login-form > button {
+  background-color: var(--clima3-primary);
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 0.6rem 1.3rem;
+  font-size: 0.9rem;
+  cursor: pointer;
+  outline: none;
+  width: fit-content;
+}
+.button-clima {
+  background-color: var(--clima3-primary);
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 0.6rem 1.3rem;
+  font-size: 0.9rem;
+  cursor: pointer;
+  outline: none;
+  width: fit-content;
+}
+
+.register-form > button {
+  background-color: var(--clima3-primary);
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 0.6rem 1.3rem;
+  font-size: 0.9rem;
+  margin-top: 1rem;
+  cursor: pointer;
+  outline: none;
+  width: fit-content;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.spacer {
+  width: 1px;
+  height: 80px;
+}
+
+.divisor-signature {
+  height: 2px;
+  width: 100%;
+  border-bottom: 3px dashed #d9d9d9;
+  margin: 1.5rem 0rem;
+}
+
+.loader {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 1rem 0rem;
+  background: white;
+  color: var(--clima3-primary);
+}

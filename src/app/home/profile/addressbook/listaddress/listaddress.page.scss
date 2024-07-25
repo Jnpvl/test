@@ -1,0 +1,69 @@
+.container-mayor {
+  --background: none;
+  display: flex;
+  flex-direction: column;
+  padding-top: 0px;
+  padding-bottom: 0px;
+  height: 100%;
+  .libreta {
+    --background: none;
+    background-color: white !important;
+    flex-grow: 1;
+  }
+}
+
+.no-registros-message {
+  font-family: 'Exo', sans-serif;
+  text-align: center;
+  justify-content: center;
+  text-align: center;
+}
+
+ion-card {
+  background-color: #FBFBFB;
+  font-family: 'Exo', sans-serif;
+  font-size: 20px;
+
+  ion-card-content {
+    -webkit-padding-start: 0px;
+    padding-inline-start: 0px;
+    padding-top: 0px;
+    padding-bottom: 0px;
+
+    .icon-col {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 2rem !important;
+      color: #F58236;
+    }
+
+    h2 {
+      font-weight: 600;
+      color: black;
+    }
+
+    p {
+      color: #4D4D4D !important;
+      font-weight: 300;
+    }
+  }
+
+  .icon-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    height: 100%;
+
+    .edit-icon {
+      font-size: 1.5rem;
+      color: #F58236;
+    }
+
+    .trash-icon {
+      font-size: 1.5rem !important;
+      color: #F58236;
+    }
+  }
+}

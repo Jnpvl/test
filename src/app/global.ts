@@ -1,0 +1,1 @@
+export const BASE_URL = 'https://back-clima3.gilasw.com/api/v1';

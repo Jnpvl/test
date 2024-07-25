@@ -1,0 +1,58 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <a [routerLink]="['../']" class="back-button"><ion-icon slot="start" name="arrow-back"></ion-icon></a>
+    </ion-buttons>
+    <ion-title class="secondary-header">
+      <img src="/assets/images/firma_bitacora.svg" width="40px" alt="" />
+      <br />
+      Bitacora {{activity?.idTarea}}</ion-title>
+    <ion-buttons slot="end">
+      <div class="spacer"></div>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="signature-page">
+  <div class="signature">
+    <div class="activity-img">
+      <div *ngIf="activity && activity.idTarea">
+        <ng-container *ngIf="firstPhotoUrls[activity.idTarea]; else noPhoto">
+          <ng-container *ngIf="firstPhotoUrls[activity.idTarea].endsWith('.pdf'); else showImage">
+            <ion-icon name="document-text-outline" style="font-size: 48px; color: white"></ion-icon>
+          </ng-container>
+          <ng-template #showImage>
+            <img [src]="firstPhotoUrls[activity.idTarea]" alt="Foto de actividad">
+          </ng-template>
+        </ng-container>
+      </div>
+      <ng-template #noPhoto>
+        <ion-icon name="camera-outline" style="font-size: 48px; color:white"></ion-icon>
+      </ng-template>
+    </div>
+    <h2 class="title">{{activity?.actividad || 'Actividad sin título'}}</h2>
+    <div class="text">
+      He supervisado todo el trabajo realizado por el personal de Clima 3 del
+      Pacifico, cada material, instalación, equipos y tiempo invertido en el
+      mismo. Autorizo y doy por concluido el proyecto a mi total agrado y entera
+      satisfacción. Asi mismo me comprometo a saldar cualquier adeudo
+      correspondiente que presente.
+    </div>
+    <div class="divisor-signature"></div>
+    @if (!firmaData?.data?.firmaBase64) {
+    <div class="signature-container">
+      <h5>Firmar</h5>
+      <button (click)="clear()">
+        <ion-icon name="close-outline"></ion-icon>
+      </button>
+      <canvas #signatureCanvas></canvas>
+    </div>
+    <span class="user">{{user?.nombre + " " + user?.apellidoP + " " + user?.apellidoM}}</span><br />
+    <button (click)="save()" class="send-signature">Enviar</button>} @else{
+    <img [src]="firmaData?.data?.firmaBase64" alt="" />
+    <span class="user">{{user?.nombre + " " + user?.apellidoP + " " + user?.apellidoM}}</span>}
+  </div>
+</ion-content>
+
+<ion-alert [isOpen]="isAlertOpen" [header]="[alertOptions.header]" [message]="[alertOptions.message]"
+  [buttons]="alertOptions.buttons" (didDismiss)="setOpen(false)"></ion-alert>

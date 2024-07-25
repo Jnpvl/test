@@ -1,0 +1,37 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <a [routerLink]="['../../../']" class="back-button">
+        <ion-icon slot="start" name="arrow-back"></ion-icon>
+      </a>
+    </ion-buttons>
+    <ion-title class="title">Actividades</ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="downloadReport()">
+        <ion-icon slot="icon-only" name="download"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="loader" *ngIf="loading">
+    <ion-spinner name="dots"></ion-spinner>
+    <p>{{loadingMessage}}</p>
+  </div>
+  <div class="activity-list" *ngIf="activitiesList && activitiesList.length > 0; else noActivities">
+    <div *ngFor="let activity of activitiesList; let i = index" (click)="selectTarea(activity)">
+      <app-activity-card [activity]="activity" [photoUrl]="firstPhotoUrls[activity.idTarea]"
+        [lastActivity]="i === (activitiesList.length - 1)">
+      </app-activity-card>
+    </div>
+  </div>
+  <ng-template #noActivities>
+    <div class="no-activities">
+      No hay actividades disponibles.
+    </div>
+  </ng-template>
+  <button class="sign-button" (click)="goToSignPage()" [disabled]="firmaExistente">
+    {{ firmaExistente ? 'Proyecto Firmado' : 'Firmar Proyecto' }}
+  </button>
+</ion-content>

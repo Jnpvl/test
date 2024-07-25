@@ -1,0 +1,122 @@
+.custom-message {
+  margin-top: -15px;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  margin-top: 10px;
+
+  .resumen {
+    font-weight: 400;
+    font-size: 23px;
+    color: #8b8b8b;
+  }
+
+  .information {
+    margin-top: 50px;
+  }
+
+  .type-service {
+    margin-top: 5px;
+    font-weight: 600;
+    font-size: 23px;
+  }
+
+  .date {
+    margin-top: 5px;
+    font-weight: 600;
+    font-size: 23px;
+    color: #f58236;
+  }
+
+  .direction {
+    margin-top: 5px;
+    color: #4d4d4d;
+    font-weight: 400;
+    font-size: 20px;
+    margin-left: 20px;
+    margin-right: 20px;
+  }
+
+  .alert-button-group {
+    display: block;
+  }
+
+  .alert-button.cancel {
+    background-color: none;
+    color: #b0b0b0;
+    text-align: left;
+    width: 80%;
+    text-transform: none;
+    margin-left: 20px;
+    text-decoration: underline !important;
+    border: none;
+
+    .alert-button-inner {
+      display: -ms-flexbox;
+      -ms-flex-align: left;
+      align-items: left;
+      -ms-flex-pack: left;
+      justify-content: left;
+    }
+  }
+
+  .alert-button.solicitar {
+    color: white;
+    background-color: #f58236;
+    width: 80%;
+    margin-left: 20px;
+    text-transform: none;
+    margin-bottom: 10px;
+
+    .alert-button-inner {
+      display: -ms-flexbox;
+      -ms-flex-align: center;
+      align-items: center;
+      -ms-flex-pack: center;
+      justify-content: center;
+    }
+  }
+
+  .custom-comentario {
+    background-color: #fbfbfb;
+    border-color: #c6c6c6 !important;
+    border: 2px solid;
+    padding: 5px;
+    margin: 10px;
+    margin-bottom: 0px;
+    --highlight-color-focused: transparent !important;
+    .textarea {
+      font-family: "Exo";
+      text-align: justify;
+    }
+  }
+}
+
+.message-cost-extra {
+  font-weight: 400;
+  font-size: 16px;
+  color: #8b8b8b;
+  text-align: center;
+}
+
+.footer {
+  text-transform: none;
+  background-color: #f7f7f7;
+
+  .next-button {
+    --background: none;
+    background-color: #f58236;
+    display: -webkit-flex;
+    align-items: center;
+    margin: 10px;
+    text-transform: none;
+    --background-activated: transparent;
+    --background-focused: transparent;
+    --background-hover: transparent;
+
+    .title {
+      margin-top: 10px;
+      font-weight: 600;
+    }
+  }
+}

@@ -1,0 +1,213 @@
+::ng-deep ion-item {
+  --border-width: 0;
+  --inner-border-width: 0;
+  --highlight-height: 0;
+}
+
+.container-mayor {
+  --background: none;
+  display: flex;
+  flex-direction: column;
+  padding-top: 0px;
+  padding-bottom: 0px;
+  height: 100%;
+
+  .background-container-firts {
+    --background: none;
+    background-color: white !important;
+  }
+
+  .background-container-second {
+    --background: none;
+    background-color: #f7f7f7;
+    flex-grow: 1;
+  }
+}
+
+.custom-header {
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.h1 {
+  font-size: 24px;
+  font-weight: 600;
+}
+
+.h2 {
+  font-size: 22px;
+  font-weight: 400;
+  color: #8b8b8b !important;
+}
+
+::ng-deep .background-services {
+  --background: none;
+  --border-width: 0;
+
+  .ion-color-selected-services {
+    background-color: #1c598b;
+  }
+
+  .ion-color-noselected-services {
+    background-color: #f7f7f7;
+    color: #4d4d4d;
+  }
+
+  ion-col {
+    ion-button {
+      --border-radius: 0;
+      --padding-start: 0;
+      --padding-end: 0;
+      --padding-top: 10px;
+      --padding-bottom: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 110px;
+
+      .sm-icon {
+        width: 2rem;
+        display: inline-block;
+        vertical-align: top;
+      }
+
+      .label-options {
+        margin-top: 10px;
+        text-align: center;
+        text-transform: none;
+        font-weight: 600;
+      }
+    }
+  }
+
+  .custom-comentario {
+    background-color: #fbfbfb;
+    border-color: #c6c6c6 !important;
+    border: 2px solid;
+    padding: 5px;
+    --highlight-color-focused: transparent !important;
+    --background: none;
+    outline: none;
+  }
+}
+
+.background-date {
+  --background: none;
+  --border-width: 0;
+  padding-top: 0px;
+
+  .button-container-date {
+    width: 100%;
+    padding-left: 10px;
+    padding-right: 10px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+
+    .ion-color-selected-date {
+      background-color: #1c598b;
+    }
+
+    .ion-color-noselected-date {
+      background-color: white;
+      color: #4d4d4d !important;
+    }
+
+    .button-date {
+      width: 100%;
+      font-size: 20px;
+      background-color: #1c598b;
+      color: white;
+
+      .icon {
+        color: #f58236;
+        margin-top: 5px;
+        margin-left: -5px;
+        margin-right: 5px;
+      }
+
+      .text {
+        text-align: left;
+        display: flex;
+        justify-content: flex-start;
+        font-size: 20px !important;
+        text-transform: none;
+        font-weight: 600;
+        margin-top: 3px;
+      }
+    }
+  }
+}
+
+.style-calendar {
+  margin-right: 0px;
+  margin-left: 10px;
+  width: 90%;
+}
+
+.footer {
+
+  text-transform: none;
+  background-color: #f7f7f7;
+
+  .next-button {
+    --background: none;
+
+    display: -webkit-flex;
+    align-items: center;
+    margin: 10px;
+    text-transform: none;
+    --background-activated: transparent;
+    --background-focused: transparent;
+    --background-hover: transparent;
+
+    .title {
+      margin-top: 10px;
+      font-weight: 600;
+    }
+  }
+}
+
+.enable-button {
+  background-color: #f58236 !important;
+}
+
+.disable-button {
+  background-color: #ededed !important;
+  color: #b0b0b0;
+}
+
+.button-native {
+  touch-action: none;
+}
+
+.button-text-date {
+  height: 40px;
+
+  .text {
+    height: 40px;
+  }
+}
+
+
+
+.toolbar {
+  display: flex;
+  justify-content: center; 
+  align-items: center; 
+  text-align: center; 
+  --min-height: 56px; 
+  --padding-start: 0; 
+  --padding-end: 0; 
+  padding-right: 10%;
+}
+
+.image {
+  display: flex;
+  justify-content: center; 
+  align-items: center; 
+}
+.logo-image {
+  height: 50px; 
+  width: auto;
+}

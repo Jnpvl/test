@@ -1,0 +1,51 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <div class="back-button ">
+        <ion-icon slot="start" name="arrow-back" (click)="back()"></ion-icon>
+      </div>
+    </ion-buttons>
+    <ion-title class="secondary-header">
+      <img src="/assets/images/firma_bitacora.svg" width="40px" alt="" />
+      <br />
+      Bitacora {{project?.idProyecto}}
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="signature-page">
+  <div class="signature">
+    <h2 class="title">{{project?.proyecto}}</h2>
+    <div class="text">
+      He supervisado todo el trabajo realizado por el personal de Clima 3 del
+      Pacifico, cada material, instalación, equipos y tiempo invertido en el
+      mismo. Autorizo y doy por concluido el proyecto a mi total agrado y entera
+      satisfacción. Asi mismo me comprometo a saldar cualquier adeudo
+      correspondiente que presente.
+    </div>
+    <div class="divisor-signature"></div>
+    <div *ngIf="!firmaProject?.firmaBase64; else firmaTemplate">
+      <div class="signature-container">
+        <h5>Firmar</h5>
+        <button (click)="clear()">
+          <ion-icon name="close-outline"></ion-icon>
+        </button>
+        <canvas #signatureCanvas></canvas>
+      </div>
+      <span class="user">{{user?.nombre + " " + user?.apellidoP + " " + user?.apellidoM}}</span><br />
+      <button (click)="save()" class="send-signature">Enviar</button>
+    </div>
+    <ng-template #firmaTemplate>
+      <img *ngIf="firmaProject?.firmaBase64" [src]="firmaProject?.firmaBase64" alt="Firma del proyecto" />
+      <span class="user">{{user?.nombre + " " + user?.apellidoP + " " + user?.apellidoM}}</span>
+    </ng-template>
+  </div>
+</ion-content>
+
+<ion-alert
+  [isOpen]="isAlertOpen"
+  [header]="alertOptions.header"
+  [message]="alertOptions.message"
+  [buttons]="alertOptions.buttons"
+  (didDismiss)="setOpen(false)"
+></ion-alert>

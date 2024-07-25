@@ -1,0 +1,26 @@
+ion-content {
+  --background: transparent;
+  --ion-background-color: #0c3251;
+
+  ion-grid {
+    color: #ffffff;
+    h6 {
+      font-weight: 100;
+      opacity: 0.9;
+      margin-top: 10px;
+    }
+    ion-button {
+      --background: #177fa3;
+      font-weight: bold;
+      font-size: 15px;
+      letter-spacing: 0.29px;
+      --border-radius: 4px;
+      height: 2.3em;
+      margin-bottom: 15px;
+      margin-top: 15px;
+      width: 55%;
+      text-align: center;
+      margin: 15px auto;
+    }
+  }
+}

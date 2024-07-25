@@ -1,0 +1,123 @@
+  ion-button {
+    font-weight: 600;
+  }
+  .security-card {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+    box-sizing: border-box;
+  }
+  
+  .input {
+    width: 100%;
+    box-sizing: border-box;
+  }
+  
+  .input label {
+    display: block;
+    font-size: 0.8rem;
+    margin-bottom: 0.4rem;
+    color: var(--clima3-primary);
+    text-transform: uppercase;
+  }
+  
+  input {
+    width: 100%;
+    padding: 0.5rem;
+    box-sizing: border-box;
+    border-radius: 5px;
+    background-color: transparent;
+    border: 1px solid var(--clima3-primary);
+  }
+  .tarjeta-bancaria {
+    box-sizing: border-box;
+    width: calc(100% - 4rem);
+    aspect-ratio: 7/4;
+    margin: 2rem;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  
+    position: relative;
+    color: #fff;
+    font-size: 14px;
+  }
+  
+  .expiration {
+    position: absolute;
+    right: 20px;
+  }
+  
+  .holder {
+    position: absolute;
+    bottom: 20px;
+  }
+  
+  .holder-name {
+    font-size: 16px;
+    font-weight: 600;
+    max-width: 175px;
+    white-space: nowrap; /* Prevent wrapping to next line */
+    overflow: hidden; /* Hide overflowing content */
+    text-overflow: ellipsis; /* Display ellipsis for overflow */
+  }
+  
+  .card-number {
+    position: absolute;
+    top: 50px;
+    font-size: 18px;
+    font-weight: 600;
+  }
+  
+  .Mastercard {
+    background: rgb(241, 147, 65);
+    background: linear-gradient(
+      150deg,
+      rgba(241, 147, 65, 1) 0%,
+      rgba(254, 127, 18, 1) 100%
+    );
+  }
+  
+  .Visa {
+    background: rgb(0, 82, 155);
+    background: linear-gradient(
+      150deg,
+      rgba(0, 82, 155, 1) 0%,
+      rgba(0, 45, 90, 1) 100%
+    );
+  }
+  
+  .Unknown {
+    background: rgb(255, 0, 0);
+    background: linear-gradient(
+      150deg,
+      rgba(255, 0, 0, 1) 0%,
+      rgba(128, 0, 0, 1) 100%
+    );
+  }
+  
+  .Amex {
+    background: rgb(0, 120, 138);
+    background: linear-gradient(
+      150deg,
+      rgba(0, 120, 138, 1) 0%,
+      rgba(0, 60, 69, 1) 100%
+    );
+  }
+  .Discover {
+    background: rgb(255, 0, 0);
+    background: linear-gradient(
+      150deg,
+      rgba(255, 0, 0, 1) 0%,
+      rgba(128, 0, 0, 1) 100%
+    );
+  }
+  
+  .card-logo {
+    position: absolute;
+    bottom: 0;
+    right: 20px;
+    width: 50px;
+  }
+  

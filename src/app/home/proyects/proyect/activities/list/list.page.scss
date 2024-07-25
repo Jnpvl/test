@@ -1,0 +1,34 @@
+.sign-button {
+  position: fixed;
+  width: 100%;
+  bottom: 0;
+  left: 0;
+  background-color: var(--clima3-primary);
+  font-size: 1.3rem;
+  padding: 1.5rem 0;
+  display: flex;
+  gap: 16px;
+  align-items: center;
+  justify-content: center;
+}
+.sign-button[disabled] {
+  opacity: 0.5;
+  pointer-events: none;
+}
+
+.activity-list {
+  padding-bottom: 6rem;
+}
+
+.no-activities{
+  justify-content: center;
+  display: flex;
+  margin-top: 10px;
+}
+
+.title{
+  text-align: center;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}

@@ -1,0 +1,55 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <a [routerLink]="['../../']" class="back-button"><ion-icon slot="start" name="arrow-back"></ion-icon></a>
+    </ion-buttons>
+    <ion-title class="title-header">Actividad</ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="downloadReport()">
+        <ion-icon slot="icon-only" name="download"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="detail-activity">
+  <div class="activity-container">
+    <div class="loader" *ngIf="loading">
+      <ion-spinner name="dots"></ion-spinner>
+      <p>{{loadingMessage}}</p>
+    </div>
+    <div class="activity">
+      <div class="title">{{ activity?.actividad || 'Actividad sin título'}}</div>
+      <ng-container *ngIf="photoDetails.length > 0; else noPhotosAvailable">
+        <swiper-container [config]="config">
+          <swiper-slide *ngFor="let photo of photoDetails; index as i">
+            <div class="photo-container">
+              <ng-container *ngIf="photo.url.endsWith('.pdf'); else imageTemplate">
+                <ion-icon name="document-text-outline" class="no-photo"></ion-icon>
+              </ng-container>
+              <ng-template #imageTemplate>
+                <img [src]="photo.url" alt="Imagen de actividad" [ngClass]="{'img': !photo.url.endsWith('.pdf')}">
+              </ng-template>
+              <div class="counter">{{i+1}}/{{photoDetails.length}}</div>
+            </div>
+            <div class="photo-description">{{ photo.notas }}</div>
+          </swiper-slide>
+        </swiper-container>
+      </ng-container>
+      <ng-template #noPhotosAvailable>
+        <div >
+          <ion-icon name="camera-outline" class="no-photo"></ion-icon>
+          <div class="photo-description">No hay imágenes disponibles.</div>
+        </div>
+      </ng-template>
+      <div class="divisor-signature"></div>
+      <div *ngIf="firmaPhoto" class="firma-container">
+        <h2 class="firma-titulo">FIRMA DE ACEPTACIÓN</h2>
+        <img [src]="firmaPhoto.urlImagen" alt="Firma de la actividad" class="firma-img">
+      </div>
+      <button class="firmar" [routerLink]="['../sign']" [disabled]="firmaExistente">
+        {{ firmaExistente? 'Actividad Firmada' : 'Firmar Actividad' }}
+      </button>
+    </div>
+  </div>
+</ion-content>

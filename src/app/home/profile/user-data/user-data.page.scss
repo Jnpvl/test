@@ -1,0 +1,101 @@
+.header-ios ion-toolbar:last-of-type {
+  --border-width: 0 0 0;
+  border: 1px solid var(--clima3-primary);
+  box-sizing: border-box;
+}
+
+.menu {
+  font-size: 2rem;
+  margin-left: 1rem;
+  color: #fff;
+}
+
+ion-title {
+  font-size: 18px;
+}
+
+.home-introduce {
+  background-color: var(--clima3-primary);
+  margin: 0;
+  padding: 0.5rem 1rem 2rem 1rem;
+  border-radius: 0px 0px 25px 25px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.home-introduce > p,
+h1 {
+  color: white;
+  margin: 0;
+  padding: 0;
+}
+
+.home-introduce > p {
+  font-size: 0.8rem;
+  text-align: center;
+}
+
+.home-introduce .login-img {
+  width: 125px;
+}
+
+.error-form {
+  text-align: right;
+  color: red;
+  font-size: 0.6rem;
+  margin-top: 0.2rem;
+}
+
+.register-form {
+  width: 100%;
+  padding: 1rem 4rem 2rem 4rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  align-items: center;
+}
+
+input:disabled {
+  background-color: #d3d3d3;
+  cursor: not-allowed;
+}
+
+.button-addressbook {
+  color: var(--clima3-primary);
+  width: 100%;
+  display: flex;
+  justify-content: right;
+  align-items: center;
+  line-height: 14px;
+  text-transform: uppercase;
+  gap: 6px;
+}
+
+.button-addressbook > span {
+  display: block;
+  width: 75px;
+  font-size: 12px;
+  padding-top: 6px;
+}
+
+.arrow {
+  background-color: var(--clima3-accent);
+  width: 24px;
+  height: 24px;
+  color: #fff;
+  border-radius: 100%;
+  display: flex;
+  align-items: center;
+  padding: 4px;
+  margin-top: 6px;
+}
+
+.button-addressbook > img {
+  width: 35px;
+}
+
+.payment {
+  font-size: 32px;
+}

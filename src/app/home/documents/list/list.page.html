@@ -1,0 +1,68 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <a [routerLink]="['../../']" class="back-button">
+        <ion-icon slot="start" name="arrow-back"></ion-icon>
+      </a>
+    </ion-buttons>
+    <ion-title class="secondary-header">Documentos</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="searchbar">
+    <ion-searchbar class="searchbar" (ionChange)="handleSearch($event)" search-icon="search-outline"
+      show-clear-button="focus" title="search" placeholder="Buscar Documento">
+    </ion-searchbar>
+  </div>
+  <div class="documents-page">
+    <ion-grid class="filters">
+      <ion-row class="ion-align-items-center">
+        <span>Filtrar por:</span>
+        <ion-col>
+          <ion-img [ngClass]="{ 'typeSelected': selectedFilter === 'cotiza' }" src="assets/images/bot_cotiza.png"
+            alt="bot_cotiza" (click)="handleFilter($event)" [attr.data-value]="'cotiza'">
+          </ion-img>
+        </ion-col>
+        <ion-col>
+          <ion-img [ngClass]="{ 'typeSelected': selectedFilter === 'recibo' }" src="assets/images/bot_recibo.png"
+            alt="bot_recibo" (click)="handleFilter($event)" [attr.data-value]="'recibo'">
+          </ion-img>
+        </ion-col>
+        <ion-col>
+          <ion-img [ngClass]="{ 'typeSelected': selectedFilter === 'factura' }" src="assets/images/bot_factura.png"
+            alt="bot_factura" (click)="handleFilter($event)" [attr.data-value]="'factura'">
+          </ion-img>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+    <ion-list class="lista-documentos">
+      <ion-item *ngFor="let document of documents" [ngClass]="getDocumentClass(document)" class="documento">
+        <div class="imgContainer">
+          <img [src]="getDocumentImage(document)" alt="" />
+        </div>
+        <ion-label>
+          <div *ngIf="!document.remision && !document.factura">
+            Cotiza N° {{ document.cotiza }}
+          </div>
+          <div *ngIf="document.remision && document.remision !== ''">
+            Recibo N° {{ document.cotiza }}
+          </div>
+          <div *ngIf="document.factura && document.factura !== ''">
+            Factura N° {{ document.cotiza }}
+          </div>
+          <div class="extra-info">
+            <span>Saldo: {{ document.saldo || '0.00' }} </span>
+          </div>
+          <div class="extra-info">
+            <span>Monto: {{ document.Monto }} MX</span>
+            <span>{{ document.fechaCotiza }}</span>
+          </div>
+        </ion-label>
+      </ion-item>
+      <ion-item *ngIf="documents.length === 0">
+        <ion-label style="text-align: center;">No hay documentos disponibles.</ion-label>
+      </ion-item>
+    </ion-list>
+  </div>
+</ion-content>

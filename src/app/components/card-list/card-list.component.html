@@ -1,0 +1,28 @@
+<ion-card>
+  <ion-card-content>
+    <ion-list>
+      <ion-item 
+        *ngFor="let card of cards" 
+        class="card"
+        (click)="handleSelectedCard(card)" 
+      >
+        <ion-thumbnail slot="end">
+          <img *ngIf="card.brand !== 'Unknown'"
+            [src]="'assets/images/banks/' + capitalize(card.brand) + '.png'"
+            alt="{{ capitalize(card.brand) }}"
+          />
+        </ion-thumbnail>
+        <ion-label class="label-info">
+          <ion-icon 
+            *ngIf="selectable"
+            [name]="isCardSelected(card) ? 'radio-button-on-outline' : 'radio-button-off-outline'"
+          ></ion-icon>
+          <div class="extra-info">
+            <span>Tarjeta: {{ card.cardNumber.slice(-4) }}<br></span>
+            <span>Banco: {{ card.bankName.slice(0, 15) }}</span>
+          </div>
+        </ion-label>
+      </ion-item>
+    </ion-list>
+  </ion-card-content>
+</ion-card>

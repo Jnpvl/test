@@ -1,0 +1,51 @@
+<app-custom-header (click)="cancelRequest()"></app-custom-header>
+
+
+<ion-content>
+  <div class="custom-message">
+    <h1 class="resumen">Resumen de solicitud:</h1>
+    <div class="information">
+      <h1 class="type-service">{{ summaryParams.selectedOption }}</h1>
+      <h1 class="date">{{ summaryParams.date }}</h1>
+      <h1 class="type-service">{{ summaryParams.userName }}</h1>
+      <h1 class="direction">
+        {{ summaryParams.street }} #{{ summaryParams.number }}
+      </h1>
+      <h1 class="direction">
+        {{ summaryParams.colony }} Cp. {{ summaryParams.cp }}
+      </h1>
+      <h1 class="direction">Referencias: {{ summaryParams.referencias }}</h1>
+      <h1 class="direction">Email: {{ summaryParams.email }}</h1>
+      <h1 class="direction">Celular: {{ summaryParams.cellular }}</h1>
+    </div>
+    <ion-row>
+      <ion-col size="12">
+        <ion-label position="floating"
+          >{{ summaryParams.comentarios ? 'Edita el comentario(Opcional)' : ''
+          }}</ion-label
+        >
+        <div class="custom-comentario">
+          <ion-textarea
+            type="textarea"
+            [(ngModel)]="summaryParams.comentarios"
+            type="text"
+            [placeholder]="summaryParams.comentarios ? 'Editar Comentario' : 'Agregar Comentario (Opcional)'"
+            rows="4"
+            class="textarea"
+          ></ion-textarea>
+        </div>
+      </ion-col>
+    </ion-row>
+  </div>
+  <ng-container *ngIf="summaryParams.selectedOption === 'Servicio Urgente'">
+    <div class="message-cost-extra">
+      <p>El servicio urgente tiene un costo adicional</p>
+    </div>
+  </ng-container>
+</ion-content>
+
+<ion-footer class="footer">
+  <ion-button class="next-button" (click)="enviarEmail()">
+    <h3 class="title">Enviar Solicitud</h3>
+  </ion-button>
+</ion-footer>

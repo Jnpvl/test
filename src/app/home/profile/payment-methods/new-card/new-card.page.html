@@ -1,0 +1,91 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <a [routerLink]="['../']" class="back-button"
+        ><ion-icon slot="start" name="arrow-back"></ion-icon
+      ></a>
+    </ion-buttons>
+    <ion-title class="secondary-header">Nueva tarjeta</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div [class]="'tarjeta-bancaria ' + cardType">
+    <div class="expiration">
+      {{ formularioCard.value.mesVigencia !== '' ?
+      formularioCard.value.mesVigencia : 'XX'}}/{{
+      formularioCard.value.anioVigencia !== '' ?
+      formularioCard.value.anioVigencia : 'XX'}}
+    </div>
+    <div class="holder">
+      <div class="holder-tag">Card holder</div>
+      <div class="holder-name">
+        {{ formularioCard.value.nombre !== '' ? formularioCard.value.nombre :
+        'Jhon Doe' }}
+      </div>
+    </div>
+    <div class="card-number">
+      {{ formatCardNumber(formularioCard.value.numero) }}
+    </div>
+    <div class="card-logo">
+      @if (cardType !=="Unknown") {
+      <img [src]="'assets/images/banks/' + cardType + '.png'" alt="Visa" />
+      }
+    </div>
+  </div>
+
+  <form class="form" [formGroup]="formularioCard" (ngSubmit)="create()">
+    <div class="form-group">
+      <label for="nombre">Nombre en tarjeta*</label>
+      <input type="text" id="nombre" formControlName="nombre" />
+    </div>
+    <div class="form-group">
+      <label for="numero">Numero de tarjeta*</label>
+      <input
+        type="tel"
+        inputmode="numeric"
+        pattern="[0-9\s]{12,19}"
+        minlength="12"
+        maxlength="19"
+        id="numero"
+        formControlName="numero"
+        (keyup)="formatCardNumberInput($event)"
+      />
+    </div>
+    <div class="security-card">
+      <div class="input">
+        <label for="">Mes vigencia</label>
+        <input 
+          title="mesVigencia" 
+          type="tel" 
+          min="1" 
+          max="12" 
+          maxlength="2" 
+          formControlName="mesVigencia" 
+        />
+      </div>
+
+      <div class="input">
+        <label for="">Año vigencia</label>
+        <input 
+          title="anioVigencia" 
+          type="tel" 
+          maxlength="4" 
+          formControlName="anioVigencia" 
+        />
+      </div>
+
+      <div class="input">
+        <label for="">CVV</label>
+        <input 
+          title="cvv2"
+          type="tel"
+          maxlength="4"
+          minlength="3"
+          formControlName="cvv2"
+        >
+      </div>
+    </div>
+    <input type="submit" value="Agregar tarjeta" />
+  </form>
+</ion-content>

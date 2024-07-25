@@ -1,0 +1,21 @@
+<main
+  [class]="(lastActivity ? 'last-proyect ' : '') + 'proyecto'"
+  (click)="sendActivity(activity!)"
+>
+  <div class="proyecto-img" [ngClass]="{'firma-background': photoUrl?.includes('Firma')}">
+    <ng-container *ngIf="photoUrl; else noImageIcon">
+      <img *ngIf="!photoUrl.toLowerCase().endsWith('.pdf'); else pdfIcon" [src]="photoUrl" alt="proyecto" />
+      <ng-template #pdfIcon>
+        <img src="assets/images/otrowhite.png" alt="PDF" class="pdf-icon" />
+      </ng-template>
+    </ng-container>
+    <ng-template #noImageIcon>
+      <ion-icon name="camera-outline" class="no-image-icon"></ion-icon>
+    </ng-template>
+  </div>
+  <div class="proyecto-description">
+    <h4 class="proyecto-descripcion">
+      {{ activity?.actividad || 'Actividad sin título' }}
+    </h4>
+  </div>
+</main>

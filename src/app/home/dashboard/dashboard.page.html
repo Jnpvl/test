@@ -1,0 +1,86 @@
+<ion-menu side="start" contentId="main-content">
+  <ion-header style="--color: white" class="ion-no-border">
+    <div class="menu-header">
+      <img src="assets/images/perfil-bco.png" alt="menu-img" class="menu-img" />
+      <div>
+        <span class="menu-name">{{ user?.nombre }} {{ user?.apellidoP }}</span><br />
+        <span>{{ user?.email }}</span>
+      </div>
+    </div>
+  </ion-header>
+  <ion-content>
+    <ion-list>
+      <ion-menu-toggle auto-hide="false">
+        <ion-item *ngFor="let option of menu" [routerLink]="[option.url]">
+          <ion-label class="menu-item"><img [src]="'/assets/images/icons/' + option.icon "
+              alt="" />{{option.title}}</ion-label>
+        </ion-item>
+        <ion-item (click)="cerrarSesion()">
+          <ion-label class="menu-item"><img [src]="'/assets/images/icons/m_cerrar.svg'" alt="" />Cerrar
+            Sesión</ion-label>
+        </ion-item>
+      </ion-menu-toggle>
+    </ion-list>
+  </ion-content>
+</ion-menu>
+<ion-header class="ion-no-border">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button style="--color: white"></ion-menu-button>
+    </ion-buttons>
+    <ion-title class="main-header">
+      <img src="assets/images/logo_white.webp" alt="logo-dashboard" class="logo" />
+    </ion-title>
+    <ion-buttons slot="end">
+      <img [routerLink]="['../profile']" src="assets/images/config.svg" alt="" class="config" />
+      <a [routerLink]="['../profile']" class="profile"> </a>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+<ion-content id="main-content">
+  <div class="home-introduce">
+    <img src="assets/images/perfil-bco.png" alt="login-img" class="login-img" />
+    <h1>{{ user?.nombre }} {{ user?.apellidoP }}</h1>
+    <p>{{ user?.email }}</p>
+  </div>
+  <div class="home-dashboard">
+    <h1>BIENVENIDO</h1>
+    <p>¿En qué podemos ayudarte?</p>
+    <div class="buttons">
+      <img [routerLink]="['../documents']" src="assets/images/bot_doctos.png" alt="docs-btn" />
+      <img [routerLink]="['../payments']" src="assets/images/bot_carrito.png" alt="carrito-btn" />
+      <img [routerLink]="['../schedule-service']" src="assets/images/bot_agendar.png" alt="agenda-btn" />
+      <img src="assets/images/bot_urgente.png" alt="urgente-btn" [routerLink]="['../schedule-service/direction']" />
+    </div>
+    <div class="proyectos">
+      <div class="title">
+        <img src="assets/images/bot_proyectos.png" alt="proyectos-btn" />
+        HISTORIAL DE PROYECTOS
+      </div>    
+      <div class="scroll-area" scrollY="true">
+        <div *ngIf="loading" class="loading-overlay">
+          <ion-spinner name="dots"></ion-spinner>
+        </div>
+        <ng-container *ngIf="!loading">
+          <div *ngIf="projects.length > 0; else noProjects" class="card" >
+            <main *ngFor="let project of projects" class="project-row" (click)="selectProject(project)">
+              <div class="proyecto-img">
+                <ion-icon name="camera-outline" *ngIf="!project.photoUrl" style="font-size: 40px; width: 40px; height: 40px;"></ion-icon>
+                <img [src]="project.photoUrl" alt="Proyecto Image" *ngIf="project.photoUrl">
+              </div>
+              <div class="proyecto-description">
+                <div class="proyecto-titulo">{{ project.titleNumber }}</div>
+                <div class="proyecto-titulo titulo">{{ project.titleText }}</div>
+              </div>
+            </main>
+          </div>
+          <ng-template #noProjects>
+            <div class="no-projects">
+              No hay proyectos disponibles.
+            </div>
+          </ng-template>
+        </ng-container>
+      </div>
+    </div>
+  </div>
+</ion-content>

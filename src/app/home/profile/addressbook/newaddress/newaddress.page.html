@@ -1,0 +1,97 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <a [routerLink]="['../']" class="back-button"
+        ><ion-icon slot="start" name="arrow-back"></ion-icon
+      ></a>
+    </ion-buttons>
+    <ion-title class="secondary-header">Nueva direccion</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="container-mayor">
+  <div class="form-container">
+    <form>
+      <ion-list class="form-container">
+        <div class="princ">
+          <ion-label>
+            Dirección Principal:
+          </ion-label>
+          <ion-toggle [(ngModel)]="direccion_principal" name="direccion_principal"></ion-toggle>
+        </div>
+        <div class="input">
+          <ion-label class="required">Nombre completo:</ion-label>
+          <ion-input [(ngModel)]="name" name="name" required class="input-text" placeholder="Oficina central"
+          maxlength="40"  [disabled]="isNameDisabled"></ion-input>
+        </div>
+        <div class="input">
+          <ion-label class="required">Correo Electronico:</ion-label>
+          <ion-input [(ngModel)]="email" name="email" required class="input-text" maxlength="40"
+            (ionChange)="validateEmail()"></ion-input>
+          <p *ngIf="!isValidEmail" class="error-message">¡Por favor, ingresa un correo electrónico válido!</p>
+        </div>
+        <div class="input">
+          <ion-label class="required">Celular:</ion-label>
+          <ion-input [(ngModel)]="cellular" name="cellular" required class="input-text" maxlength="10"
+            inputmode="numeric" (input)="formatCellular($event)"></ion-input>
+        </div>
+        <hr class="separator">
+  
+        <div class="gps ion-text-right">
+          <ion-button class="content-button" (click)="getPosition()">
+            <ion-icon name="pin" class="icon"></ion-icon>
+            <span class="button-text">Obtener dirección</span>
+          </ion-button>
+        </div>
+        <div class="input">
+          <ion-label class="required">Ciudad:</ion-label>
+          <ion-input [(ngModel)]="city" name="city" required class="input-text" maxlength="40"></ion-input>
+        </div>
+        <div class="input">
+          <ion-label class="required">Estado:</ion-label>
+          <ion-input [(ngModel)]="state" name="state" required class="input-text" maxlength="40"></ion-input>
+        </div>
+  
+        <div class="input">
+          <ion-label class="required">Calle:</ion-label>
+          <ion-input [(ngModel)]="street" name="street" required class="input-text" maxlength="40"></ion-input>
+        </div>
+        <div class="input">
+          <ion-label class="required">Colonia:</ion-label>
+          <ion-input [(ngModel)]="colony" name="colony" required class="input-text" maxlength="40"></ion-input>
+        </div>
+        <div class="input">
+          <ion-label class="required">Número Exterior:</ion-label>
+          <ion-input [(ngModel)]="number" name="number" required class="input-text" maxlength="10"></ion-input>
+        </div>
+        <div class="input">
+          <ion-label >Número Interior:</ion-label>
+          <ion-input [(ngModel)]="numberInt" name="numberInt" required class="input-text" maxlength="10"></ion-input>
+        </div>
+        <div class="input">
+          <ion-label class="required">Código Postal:</ion-label>
+          <ion-input [(ngModel)]="cp" name="cp" required class="input-text" maxlength="5"
+            inputmode="numeric"></ion-input>
+        </div>
+        <div class="input">
+          <ion-label class="required">Referencia:</ion-label>
+          <ion-input [(ngModel)]="referencias" name="referencias" required class="input-text" maxlength="40"></ion-input>
+        </div>
+      </ion-list>
+    </form>
+  </div>
+  
+</ion-content>
+
+<ion-footer class="footer">
+  <ion-button class="next-button" (click)="addDirection()" [ngClass]="{
+    'enable-button': validateData(),
+    'disable-button': !validateData()
+  }" [disabled]="!validateData()">
+    <h3 class="title">
+      {{ direccion ? 'Actualizar Dirección' : 'Guardar Dirección' }}
+    </h3>
+  </ion-button>
+</ion-footer>
+
+

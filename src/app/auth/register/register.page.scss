@@ -1,0 +1,38 @@
+.register-images {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  margin-top: 2rem;
+  flex-direction: column;
+}
+
+.logo {
+  width: 200px;
+}
+
+.user-vector {
+  width: 150px;
+}
+
+.register-form {
+  width: 100%;
+  padding: 1rem 4rem 2rem 4rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  align-items: center;
+}
+
+.error-form {
+  text-align: right;
+  color: red;
+  font-size: 0.6rem;
+  margin-top: 0.2rem;
+}
+
+.register-button:disabled {
+  background-color: #ccc;
+  color: #fff;
+  cursor: not-allowed;
+}
