@@ -5,7 +5,7 @@ echo "donde estoy"
 pwd  # Esto mostrará: /Users/runner/work/1/s/ios/App
 
 echo "aca voy"
-cd ../../  # Cambiamos tres niveles hacia arriba
+cd ../..  # Cambiamos tres niveles hacia arriba
 pwd  # Esto mostrará: /Users/runner/work/1/s
 ls
 
