@@ -5,7 +5,7 @@ echo "donde estoy"
 pwd  # Esto mostrará: /Users/runner/work/1/s/ios/App
 
 echo "aca voy"
-cd ../..  # Cambiamos dos niveles hacia arriba
+cd ../..  # Cambiamos dos niveles hacia arriba.
 pwd  # Esto mostrará: /Users/runner/work/1/s
 
 # Instala las dependencias de Node
