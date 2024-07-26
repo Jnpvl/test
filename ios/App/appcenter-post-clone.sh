@@ -3,6 +3,7 @@
 echo "Iniciando el script appcenter-post-clone.sh"
 echo "donde estoy"
 pwd  # Esto mostrará: /Users/runner/work/1/s/ios/App
+ls
 
 echo "aca voy"
 cd ../..  # Cambiamos dos niveles hacia arriba.
@@ -22,6 +23,9 @@ else
     echo "Error: El archivo pods_helpers.rb no se encuentra en node_modules/@capacitor/ios/scripts"
 fi
 
+
+cd Users/runner/work/1/s/ios/App
+ls
 # Desinstala todas las versiones de CocoaPods
 echo "Desinstalando todas las versiones de CocoaPods"
 sudo gem uninstall cocoapods --all --executables  # Este comando se ejecuta en: /Users/runner/work/1/s
