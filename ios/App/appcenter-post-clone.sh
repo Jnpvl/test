@@ -4,7 +4,7 @@ echo "Iniciando el script appcenter-post-clone.sh"
 echo "donde estoy"
 pwd  #/Users/runner/work/1/s/ios/App
 echo "aca voy"
-cd Users/runner/work/1/s
+cd cd ../../..
 pwd
 # Instala las dependencias de Node
 echo "Instalando dependencias de Node..."
