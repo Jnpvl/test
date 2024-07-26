@@ -5,7 +5,7 @@ echo "donde estoy"
 pwd  # Esto mostrará: /Users/runner/work/1/s/ios/App
 
 echo "aca voy"
-cd ../../  # Cambiamos tres niveles hacia arriba
+cd ../..  # Cambiamos dos niveles hacia arriba
 pwd  # Esto mostrará: /Users/runner/work/1/s
 
 # Instala las dependencias de Node
@@ -16,7 +16,11 @@ ls
 # Verifica que las dependencias de Node estén instaladas
 pwd  # Este comando mostrará: /Users/runner/work/1/s
 echo "Verificando que node_modules contiene @capacitor/ios..."
-ls cd node_modules/@capacitor/ios/scripts/pods_helpers.rb  # Esto verificará la existencia del archivo en: /Users/runner/work/1/node_modules/@capacitor/ios/scripts/pods_helpers.rb
+if [ -f node_modules/@capacitor/ios/scripts/pods_helpers.rb ]; then
+    echo "El archivo pods_helpers.rb existe en node_modules/@capacitor/ios/scripts"
+else
+    echo "Error: El archivo pods_helpers.rb no se encuentra en node_modules/@capacitor/ios/scripts"
+fi
 
 # Desinstala todas las versiones de CocoaPods
 echo "Desinstalando todas las versiones de CocoaPods"
