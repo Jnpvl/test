@@ -7,6 +7,7 @@ pwd  # Esto mostrará: /Users/runner/work/1/s/ios/App
 echo "aca voy"
 cd ../../..  # Cambiamos tres niveles hacia arriba
 pwd  # Esto mostrará: /Users/runner/work/1/s
+ls
 
 # Instala las dependencias de Node
 echo "Instalando dependencias de Node..."
