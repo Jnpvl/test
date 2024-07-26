@@ -54,4 +54,11 @@ else
     echo "Error: El comando 'pod' no se encuentra en el PATH."
 fi
 
+# Asegúrate de estar en el directorio correcto para `pod install`
+echo "Cambiando al directorio del Podfile y ejecutando pod install..."
+cd /Users/runner/work/1/s/ios/App
+pwd  # Aseguramos que estamos en: /Users/runner/work/1/s/ios/App
+ls
+pod install --repo-update  # Este comando se ejecutará en: /Users/runner/work/1/s/ios/App
+
 echo "Fin del script appcenter-post-clone.sh"
