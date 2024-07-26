@@ -24,7 +24,7 @@ else
 fi
 
 
-cd Users/runner/work/1/s/ios/App
+cd ios/App
 ls
 # Desinstala todas las versiones de CocoaPods
 echo "Desinstalando todas las versiones de CocoaPods"
