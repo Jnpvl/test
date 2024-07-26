@@ -4,11 +4,8 @@ echo "Iniciando el script appcenter-post-clone.sh"
 echo "donde estoy"
 pwd  # Esto mostrará: /Users/runner/work/1/s/ios/App
 
-
-
 echo "aca voy"
-cd ../../..  # Cambiamos tres niveles hacia arriba.
-ls
+cd ../../..  # Cambiamos tres niveles hacia arriba
 pwd  # Esto mostrará: /Users/runner/work/1/s
 
 # Instala las dependencias de Node
